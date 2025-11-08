@@ -168,6 +168,62 @@
             background-color: var(--primary-color);
             border-color: var(--white);
         }
+
+        /* --- ABOUT ME SECTION ---*/
+
+        #about {
+            background-color: var(--white);
+        }
+        
+        .about-grid {
+            display: flex;
+            gap: 2.5rem; /* converted from 40px */
+            align-items: flex-start;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100;
+            max-width: 18.75rem; /* Converted from 300px */
+            border-radius: var(--border-radius);
+        }
+
+        .about-text{
+            flex: 2;
+        }
+
+        .about-text h3{
+            font-size: 1.8rem;
+            font-weight: lighter;
+            font-style: italic;
+            margin-bottom: 0.9375rem;
+        }
+
+        .info-card-container {
+            display: flex;
+            gap: 1.25rem; /* Converted from 20px */
+            margin: 1.5625rem 0 /* Converted from 25px 0 */
+        }
+
+        .info-card {
+            flex: 1;
+            padding: 1.25rem; /* Converted from 20 px */
+            border: 0.0625rem solid #ddd; /* Converted from 1px; */
+            border-radius: var(--border-radius);
+            text-align: center;
+            background-color: var(--lght-bg-color);
+            box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05); /* Converted from 0 2px 5px */
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem; /* Converted from 1.2rem */
+            color: var(--accent-color);
+            margin-bottom: 0.3125rem; /* Converted from 5px */
+        }
     </style>
 </head>
 
@@ -209,19 +265,19 @@
     <!-- ! End of Landing section -->
 
     <!-- ! Start of About Me section -->
-    <section class="section-padding">
+    <section id="about" class="section-padding">
         <!-- Top section-->
         <h2>
             About Me
         </h2>
 
         <!--  Bottom section-->
-        <div>
-            <div>
+        <div class="about-grid">
+            <div class="about-image">
                 <img src="https://placehold.co/600x600/CCCCCC/6c757d?text=My+Portrait"
                     alt="Placeholder image for portrait">
             </div>
-            <div>
+            <div class="about-text">
                 <h3>
                     "My Passion? Fullstack Development"
                 </h3>
@@ -229,31 +285,32 @@
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, eligendi commodi repellat numquam
                     molestiae ipsam dolores reprehenderit repellendus culpa quis!
                 </p>
-            </div>
-            <div>
-                <div>
-                    <h4>
-                        <!--Years of exp-->
 
-                    </h4>
-                    <p>
-                        <!--designation-->
+                <div class="info-card-container">
+                    <div class="info-card">
+                        <h4>
+                            <!--Years of exp-->
 
-                    </p>
+                        </h4>
+                        <p>
+                            <!--designation-->
 
+                        </p>
+
+                    </div>
+                    <div class="info-card">
+                        <h4>
+                            BE. CSE
+                        </h4>
+                        <p>
+                            Education
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h4>
-                        BE. CSE
-                    </h4>
-                    <p>
-                        Education
-                    </p>
-                </div>
+                <p>
+                    <!-- Personal quote-->
+                </p>
             </div>
-            <p>
-                <!-- Personal quote-->
-            </p>
         </div>
 
     </section>
