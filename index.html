@@ -224,6 +224,57 @@
             color: var(--accent-color);
             margin-bottom: 0.3125rem; /* Converted from 5px */
         }
+
+        #experience {
+            background-color: var(--lght-bg-color);
+        }
+
+        .experience-container {
+            display: flex;
+            gap: 2.5rem; /* Converted from 40 px */
+            justify-content: center;
+        }
+
+        .experience-card {
+            flex: 1;
+            min-width: 18.75rem; /* Converted from 30 px */
+            padding: 1.875rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0.025rem 0.625rem rgba(0, 0, 0, 0.05); /* Converted from 0 4px 10 px */
+            text-align: center;
+        }
+
+        .experience-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5625rem; /* Converted from 25 px */
+            border-bottom: 0.125rem solid var(--accent-color); /* Converted from 2px */
+            padding-bottom: 0.625rem; /* Converted from 10px */
+            display: inline-block;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            margin-top: 0.9375rem; /* Converted from 15px */
+        }
+
+        .skill-list li {
+            width: calc(50% - 0.625rem); /* Converted from 10px */
+            margin-bottom: 0.9375rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.2rem; 
+            margin-right: 0.625rem; /* Converted from 10px */
+        }
     </style>
 </head>
 
@@ -317,7 +368,33 @@
     <!-- ! End of About Me section -->
 
     <!-- ! Start of Experience section -->
-    <!-- Insert HTML syntax here -->
+     <section id="experience" class="section-padding">
+        <h2>Skills</h2>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Tech Stack</h3>
+                <ul class="skill-list">
+                    <li>HTML5 & Semantic Markup</li>
+                    <li>CSS3 (and Bootstrap)</li>
+                    <li>Javascript (ES6+)</li>
+                    <li>React</li>
+                    <li>Java</li>
+                    <li>Springboot (Maven)</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Tools & Concepts</h3>
+                <ul class="skill-list">
+                    <li>Version Control (Git, Github)</li>
+                    <li>Client-Server Artchitecture</li>
+                    <li>API Development (Postman)</li>
+                    <li>Unit Testing (Jest/jUnit)</li>
+                    <li>Visual Studio Code</li>
+                    <li>IntelliJ IDEA</li>
+                </ul>
+            </div>
+        </div>
+     </section>
     <!-- ! End of Experience section -->
 
     <!-- ! Start of Projects section -->
