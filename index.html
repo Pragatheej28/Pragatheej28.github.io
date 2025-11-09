@@ -225,10 +225,11 @@
             margin-bottom: 0.3125rem; /* Converted from 5px */
         }
 
+        /* EXPERIENCE SECTION */
         #experience {
             background-color: var(--lght-bg-color);
         }
-
+        
         .experience-container {
             display: flex;
             gap: 2.5rem; /* Converted from 40 px */
@@ -342,6 +343,78 @@
             margin-top: 0.625rem; /* Converted from 10px */
             font-size: 0.8rem; /* Converted from 0.8em */
             color: var(--secondary-color);
+        }
+
+        /* Responsive styles for the web pages */
+        /* apply the styles here if the screen is <= 600px (16px x 37.5rem) */
+        @media(max-width: 37.5rem) { 
+
+            /* customise the section-padding */
+            .section-padding {
+                padding: 3.125rem 0.9375rem;
+            }
+
+            /* wrap our navigation bar */
+            nav{
+                flex-wrap: wrap;
+            }
+
+            .landing-content h1 {
+                font-size: 2.5rem; /* Converted from 2.5em */
+            }
+
+            /* set the cta items in a single column */
+            .cta-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.625rem;
+            }
+
+            /* change the link inside cta group */
+            /* descendent selector */
+            .cta-group a{
+                margin: 0;
+                width: 100%;
+            }
+
+            .contact-links a {
+                margin: 0.3125rem; /* Converted from 5px */
+            }
+        }
+
+        /* apply the styles here if the screen is <= 900px (16px x 56.25rem) */
+        @media(max-width: 56.25rem) {
+            /* Change h2 size */
+            h2 {
+                font-size: 2rem;
+            }
+
+            /* Change the about grid to a single column */
+            .about-grid {
+                flex-direction: column;
+            }
+            
+            /* Change the potrait image to the center of the page */
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .info-card-container {
+                flex-direction: column;
+            }
+
+            .experience-container {
+                flex-direction: column;
+            }
+
+            .skill-list li {
+                width: 100%;
+            }
+
+            /* TODO - fix responsive layout for experiences container */
+            /* TODO - fix responsive layout for skills-list li */
+            /* TODO - fix responsive layout for project-grid */
+            /* TODO - fix responsive layout for project-card */
         }
 
     </style>
