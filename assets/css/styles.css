@@ -1,10 +1,10 @@
 /* CSS variables for easy theme management*/
 :root {
     --primary-color: #1a1a1a;
-    --secondary-color: #6c757d;
+    --secondary-color: #404549;
     --accent-color: #488eb4;
     /* A touch of blue for accents */
-    --lght-bg-color: #bec0c2;
+    --lght-bg-color: #b9d6f2;
     --white: #fff;
     /* #fff === #ffffff */
     --border-radius: 0.5rem;
@@ -45,7 +45,7 @@ body {
 h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 3.75;
+    margin-bottom: 3.75rem;
     color: var(--primary-color);
 }
 
@@ -82,12 +82,12 @@ nav a:hover {
 /* ID Selector */
 #landing {
     min-height: 80dvh;
-    /* when viewing landing section, tske up 80% of the screen estate dynamically */
+    /* when viewing landing section, take up 80% of the screen estate dynamically */
     display: flex;
     justify-content: center;
     /* Align center horizontally */
     align-items: center;
-    /* ALign content center vertically */
+    /* Align content center vertically */
     text-align: center;
     /* Align all text center*/
     background-color: var(--lght-bg-color);
@@ -137,7 +137,6 @@ nav a:hover {
 .primary-cta {
     background-color: var(--primary-color);
     color: var(--white);
-
 }
 
 .primary-cta:hover {
@@ -153,6 +152,7 @@ nav a:hover {
 
 .secondary-cta:hover {
     background-color: var(--primary-color);
+    color: var(--white);
     border-color: var(--white);
 }
 
@@ -163,26 +163,17 @@ nav a:hover {
 }
 
 .about-grid {
-    display: flex;
-    gap: 2.5rem;
-    /* converted from 40px */
-    align-items: flex-start;
-}
-
-.about-image {
-    flex: 1;
+    max-width: 75rem;
+    margin: 0 auto;
     text-align: center;
 }
 
-.about-image img {
-    width: 100;
-    max-width: 18.75rem;
-    /* Converted from 300px */
-    border-radius: var(--border-radius);
+.about-text {
+    width: 100%;
 }
 
-.about-text {
-    flex: 2;
+.about-text > p {
+    text-align: left;
 }
 
 .about-text h3 {
@@ -196,8 +187,8 @@ nav a:hover {
     display: flex;
     gap: 1.25rem;
     /* Converted from 20px */
-    margin: 1.5625rem 0
-        /* Converted from 25px 0 */
+    margin: 1.5625rem 0;
+    /* Converted from 25px 0 */
 }
 
 .info-card {
@@ -221,7 +212,7 @@ nav a:hover {
     /* Converted from 5px */
 }
 
-/* EXPERIENCE SECTION */
+/* EXPERIENCE SECTION - SKILLS WITH ICONS */
 #experience {
     background-color: var(--lght-bg-color);
 }
@@ -229,57 +220,65 @@ nav a:hover {
 .experience-container {
     display: flex;
     gap: 2.5rem;
-    /* Converted from 40 px */
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .experience-card {
     flex: 1;
     min-width: 18.75rem;
-    /* Converted from 30 px */
     padding: 1.875rem;
     background-color: var(--white);
     border-radius: var(--border-radius);
-    box-shadow: 0 0.025rem 0.625rem rgba(0, 0, 0, 0.05);
-    /* Converted from 0 4px 10 px */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
 .experience-card h3 {
     color: var(--primary-color);
     margin-bottom: 1.5625rem;
-    /* Converted from 25 px */
     border-bottom: 0.125rem solid var(--accent-color);
-    /* Converted from 2px */
     padding-bottom: 0.625rem;
-    /* Converted from 10px */
     display: inline-block;
 }
 
-.skill-list {
+/* Icon list styling */
+.icon-list {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: left;
-    margin-top: 0.9375rem;
-    /* Converted from 15px */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 1.5rem;
 }
 
-.skill-list li {
-    width: calc(50% - 0.625rem);
-    /* Converted from 10px */
-    margin-bottom: 0.9375rem;
-    font-weight: 400;
+.icon-list li {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--lght-bg-color);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
 }
 
-.skill-list li::before {
-    content: "•";
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    margin-right: 0.625rem;
-    /* Converted from 10px */
+.icon-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.icon-list span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 /* CONTACT ME SECTION */
@@ -325,6 +324,12 @@ nav a:hover {
     /* Converted from 1.2em */
 }
 
+/* WhatsApp icon styling */
+.fa-whatsapp {
+    color: #25D366;
+    font-size: 1.2rem;
+}
+
 /* --- FOOTER --- */
 footer {
     text-align: center;
@@ -342,14 +347,6 @@ footer {
     transition: color var(--transition-speed);
 }
 
-.footer-nav a {
-    margin: 0 0.625rem;
-    /* Converted from 10 px*/
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed);
-}
-
 .footer-nav a:hover {
     color: var(--accent-color);
 }
@@ -361,6 +358,113 @@ footer {
     /* Converted from 0.8em */
     color: var(--secondary-color);
 }
+
+/* --- PROJECTS SECTION --- */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    /* Converted from 30px */
+    justify-content: center;
+}
+
+.project-card {
+    flex-basis: calc(33.333% - 1.25rem);
+    /* Converted from 20px */
+    min-width: 17.5rem;
+    /* Converted from 280px */
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+    /* Converted from 0 4px 15px */
+    overflow: hidden;
+    transition: transform var(--transition-speed);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.project-card:hover {
+    transform: translateY(-0.3125rem);
+    /* Converted from -5px */
+}
+
+.project-card .project-image {
+    width: 100%;
+    height: 12.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 1.25rem;
+    /* Converted from 20px */
+}
+
+.project-details h3 {
+    font-size: 1.5rem;
+    /* Converted from 1.5em */
+    margin-bottom: 0.625rem;
+    /* Converted from 10px */
+    text-align: left;
+}
+
+.project-details p {
+    color: var(--secondary-color);
+    margin-bottom: 0.9375rem;
+    /* Converted from 15px */
+    font-size: 0.95rem;
+    /* Converted from 0.95em */
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 0.9375rem;
+    /* Converted from 15px */
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+.toolused {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;  
+    display: flex;  
+    gap: 0.5rem;
+    flex-wrap: wrap;  
+}
+
+
+.toolused li {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin: 0;  
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+.project-links {
+    display: flex;          
+    gap: 0.5rem;            
+    flex-wrap: wrap;         
+    margin-top: 0.75rem;    
+}
+
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
 /* Responsive styles for the web pages */
 /* apply the styles here if the screen is <= 600px (16px x 37.5rem) */
@@ -395,10 +499,40 @@ footer {
         width: 100%;
     }
 
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        align-items: center;
+    }
+
     .contact-links a {
         margin: 0.3125rem;
+        width: 80%;
         /* Converted from 5px */
     }
+
+    /* Icon list responsive */
+    .icon-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Projects responsive */
+    .projects-grid {
+        gap: 1.25rem;
+    }
+
+    .project-card {
+        flex-basis: 100%;
+        min-width: auto;
+    }
+    
 }
 
 /* apply the styles here if the screen is <= 900px (16px x 56.25rem) */
@@ -409,16 +543,6 @@ footer {
         font-size: 2rem;
     }
 
-    /* Change the about grid to a single column */
-    .about-grid {
-        flex-direction: column;
-    }
-
-    /* Change the potrait image to the center of the page */
-    .about-image {
-        margin: 0 auto;
-    }
-
     .info-card-container {
         flex-direction: column;
     }
@@ -427,94 +551,17 @@ footer {
         flex-direction: column;
     }
 
-    .skill-list li {
-        width: 100%;
+    /* Icon list responsive */
+    .icon-list {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-}
+    /* Projects responsive */
+    .projects-grid {
+        gap: 1.5rem;
+    }
 
-/* --- 4. PROJECTS SECTION --- */
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.875rem;
-    /* Converted from 30px */
-    justify-content: center;
+    .project-card {
+        flex-basis: calc(50% - 1rem);
+    }
 }
-
-.project-card {
-    flex-basis: calc(33.333% - 1.25rem);
-    /* Converted from 20px */
-    min-width: 17.5rem;
-    /* Converted from 280px */
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
-    /* Converted from 0 4px 15px */
-    overflow: hidden;
-    transition: transform var(--transition-speed);
-    border: 1px soild rgba(0, 0, 0, 0.10);
-}
-
-.project-card .project-image {
-    width: 100%;
-    height: 10rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    object-fit: cover;
-    background-image: url("https://placehold.co/100x100/orange/white?text=Image Placeholder");
-}
-
-.project-card:hover {
-    transform: translateY(-0.3125rem);
-    /* Converted from -5px */
-}
-
-.project-image {
-    width: 100%;
-    height: 12.5rem;
-    /* Converted from 200px */
-    background-color: var(--light-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    /* Converted from 1.5em */
-    color: var(--secondary-color);
-}
-
-.project-details {
-    padding: 1.25rem;
-    /* Converted from 20px */
-}
-
-.project-details h3 {
-    font-size: 1.5rem;
-    /* Converted from 1.5em */
-    margin-bottom: 0.625rem;
-    /* Converted from 10px */
-    text-align: left;
-}
-
-.project-details p {
-    color: var(--secondary-color);
-    margin-bottom: 0.9375rem;
-    /* Converted from 15px */
-    font-size: 0.95rem;
-    /* Converted from 0.95em */
-}
-
-.project-links a {
-    display: inline-block;
-    margin-right: 0.9375rem;
-    /* Converted from 15px */
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* TODO - fix responsive layout for experiences container */
-/* TODO - fix responsive layout for skills-list li */
-/* TODO - fix responsive layout for project-grid */
-/* TODO - fix responsive layout for project-card */
