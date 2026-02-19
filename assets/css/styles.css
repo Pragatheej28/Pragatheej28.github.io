@@ -245,20 +245,22 @@ nav a:hover {
 /* Icon list styling */
 .icon-list {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     padding: 0;
     margin-top: 1.5rem;
 }
 
 .icon-list li {
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background-color: var(--lght-bg-color);
+    background-color: transparent;
     border-radius: var(--border-radius);
     transition: all var(--transition-speed);
 }
